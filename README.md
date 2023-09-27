@@ -402,6 +402,8 @@ dependencies {
 ### DAY4
 
 - [android/sunflower: A gardening app illustrating Android development best practices with migrating a View-based app to Jetpack Compose. (github.com)](https://github.com/android/sunflower)
+- [应用架构：数据层 - DataStore - Android 开发者  | Android Developers](https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn)
+- [Android Jetpack DataStore. How to store data asynchronously in… | by Mansi Shah | Jetpack Composers | Medium](https://medium.com/jetpack-composers/android-jetpack-datastore-5dfdfea4a3ea)
 
 
 
@@ -417,7 +419,53 @@ Note: As Compose cannot render HTML code in Text yet. The AndroidViewBinding API
 
 #### Splash
 
-- [Jetpack Compose: Splash Screen API | by Mesut G. | Medium](https://developersancho.medium.com/jetpack-compose-splash-screen-api-36ca40c6196b)
+- [[Splash screens  | Android Developers](https://developer.android.com/develop/ui/views/launch/splash-screen)](https://developersancho.medium.com/jetpack-compose-splash-screen-api-36ca40c6196b)
+
+往前适配splash-screen
+
+- 添加依赖
+
+```kotlin
+implementation("androidx.core:core-splashscreen:1.0.0")
+```
+
+
+
+- 新建theme配置参数
+
+```xml
+<style name="Theme.Intro" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/tertiary</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/app_logo</item>
+        <item name="windowSplashScreenIconBackgroundColor">@color/secondary</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+    </style>
+```
+
+- 给启动页Act设置主题
+
+#### IntroBanner
+
+
+
+##### 添加依赖
+
+```kotlin
+// settings.gradle.kts
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        ...
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+
+// build.gradle.kts(:app)
+dependencies {
+//    banner
+    implementation("com.github.zhujiang521:Banner:2.6.5")
+}
+```
 
 
 

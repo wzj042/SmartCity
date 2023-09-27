@@ -52,6 +52,16 @@ android {
 
 dependencies {
 
+//    splash
+    implementation("androidx.core:core-splashscreen:1.0.0")
+
+//    banner
+    implementation("com.github.zhujiang521:Banner:2.6.5")
+
+
+
+
+//    def dependencies
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)

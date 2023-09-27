@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
 import cn.xqher.smartcity.R
 import cn.xqher.smartcity.compose.screen.IntroScreen
 import cn.xqher.smartcity.ui.theme.SmartCityTheme
@@ -26,7 +27,7 @@ class IntroActivity : ComponentActivity() {
             SmartCityTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = colorResource(id = R.color.banner_status)
                 ) {
                     IntroScreen()
                 }

@@ -61,7 +61,8 @@ dependencies {
 //    preference
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
-
+//    navigation
+    implementation("androidx.navigation:navigation-compose:2.5.3")
 
 //    def dependencies
     implementation(libs.core.ktx)

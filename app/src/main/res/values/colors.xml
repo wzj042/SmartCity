@@ -12,5 +12,6 @@
     <color name="tertiary">#B28960</color>
     <color name="neutral">#969088</color>
     <color name="banner_status">#2226A7</color>
+    <color name="status">#7D5800</color>
 
 </resources>

@@ -9,4 +9,9 @@
     <string name="cancel">取消</string>
     <string name="save">保存</string>
     <string name="enter_home">进入主页</string>
+    <string name="nav_home">首页</string>
+    <string name="nav_service">全部服务</string>
+    <string name="nav_restrict">精准扶贫</string>
+    <string name="nav_news">新闻</string>
+    <string name="nav_personal">个人中心</string>
 </resources>

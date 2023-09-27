@@ -84,7 +84,7 @@ private val DarkColorScheme = darkColorScheme(
 
 
 @Composable
-fun SmartCItyTheme(
+fun SmartCityTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit

@@ -415,6 +415,14 @@ Note: As Compose cannot render HTML code in Text yet. The AndroidViewBinding API
 
 - 注意compose Text暂不支持html code, 官方示例也提到了用binding 获取TextView去组合使用
 
+#### Splash
+
+- [Jetpack Compose: Splash Screen API | by Mesut G. | Medium](https://developersancho.medium.com/jetpack-compose-splash-screen-api-36ca40c6196b)
+
+
+
+
+
 ## 参考引用
 
 - [What's the equivalent of AppBar in Jetpack Compose? 用于确认更换的组件](https://www.jetpackcompose.app/What-is-the-equivalent-of-AppBar-in-Jetpack-Compose) 

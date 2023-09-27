@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">智慧城市</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="net_config">网络设置</string>
+    <string name="need_net_config">请先设置网络！</string>
+    <string name="input_empty">输入内容为空！</string>
+    <string name="success">操作成功</string>
+    <string name="base_url">服务器地址</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="enter_home">进入主页</string>
 </resources>

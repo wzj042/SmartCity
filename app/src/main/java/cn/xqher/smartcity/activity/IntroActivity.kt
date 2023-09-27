@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import cn.xqher.smartcity.R
-import cn.xqher.smartcity.screen.IntroScreen
+import cn.xqher.smartcity.compose.screen.IntroScreen
 import cn.xqher.smartcity.ui.theme.SmartCityTheme
 
 // 不用SplashActivity命名，避免自定义的SplashActivity和系统的SplashActivity冲突

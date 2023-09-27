@@ -58,6 +58,8 @@ dependencies {
 //    banner
     implementation("com.github.zhujiang521:Banner:2.6.5")
 
+//    preference
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 
 
 

@@ -33,7 +33,7 @@ import cn.xqher.smartcity.compose.screen.personal.PersonalScreen
 import cn.xqher.smartcity.compose.screen.restrict.RestrictScreen
 import cn.xqher.smartcity.compose.screen.service.ServiceScreen
 import cn.xqher.smartcity.ui.theme.SmartCityTheme
-import cn.xqher.smartcity.utilities.SmartCityAppBar
+import cn.xqher.smartcity.utilities.compose.SmartCityAppBar
 
 
 @Composable

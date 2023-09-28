@@ -11,9 +11,13 @@ data class NewsBean(
 
 data class NewsRow(
     override var data: Any?,
+    override val extra: String = "",
+    override val coverType: CoverType = CoverType.Right,
+    override val status: String = "",
+    override val title: String = "",
+    override val content: String = "",
     val appType: String = "",
     val commentNum: Int = 0,
-    val content: String = "",
     val cover: String = "",
     val createBy: String = "",
     val createTime: String = "",
@@ -22,10 +26,8 @@ data class NewsRow(
     val likeNum: Int = 0,
     val publishDate: String = "",
     val readNum: Int = 0,
-    val status: String = "",
-    val title: String = "",
     val top: String = "",
     val type: String = "",
     val updateBy: String = "",
-    val updateTime: String = ""
-):BaseBannerBean()
+    val updateTime: String = "",
+) : BaseListData()

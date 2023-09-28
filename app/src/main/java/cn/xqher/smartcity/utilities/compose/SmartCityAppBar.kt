@@ -1,4 +1,4 @@
-package cn.xqher.smartcity.utilities
+package cn.xqher.smartcity.utilities.compose
 
 import android.app.Activity
 import androidx.compose.material.icons.Icons

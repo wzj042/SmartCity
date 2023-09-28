@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "cn.xqher.smartcity"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "cn.xqher.smartcity"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -53,17 +53,42 @@ android {
 dependencies {
 
 //    splash
-    implementation("androidx.core:core-splashscreen:1.0.0")
+//    noinspection UseTomlInstead
+    implementation("androidx.core:core-splashscreen:1.0.1")
 
-//    banner
-    implementation("com.github.zhujiang521:Banner:2.6.5")
 
 //    preference
+//    noinspection UseTomlInstead
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
 //    navigation
-    implementation("androidx.navigation:navigation-compose:2.5.3")
+//    noinspection UseTomlInstead
+    implementation("androidx.navigation:navigation-compose:2.7.3")
 
+//    banner
+//    noinspection UseTomlInstead
+    implementation("com.github.zhujiang521:Banner:2.6.5")
+
+//    coil
+//    noinspection UseTomlInstead
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
+//    for net with kt-coroutines, okhttp, gson, compose.runtime
+
+//    noinspection UseTomlInstead
+    implementation("com.google.code.gson:gson:2.10.1")
+
+//    noinspection UseTomlInstead
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3") // 协程(版本自定)
+
+//    noinspection UseTomlInstead
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+//    noinspection UseTomlInstead
+    implementation("com.github.liangjingkanji:Net:3.6.2")
+
+//    noinspection UseTomlInstead
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
 //    def dependencies
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)

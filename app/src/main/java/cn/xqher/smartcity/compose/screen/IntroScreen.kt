@@ -38,16 +38,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewParameter
-import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import cn.xqher.smartcity.R
 import cn.xqher.smartcity.activity.MainActivity
 import cn.xqher.smartcity.data.PrefStore
 import cn.xqher.smartcity.utilities.Constants
+import com.drake.net.NetConfig
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -157,14 +155,11 @@ fun IntroScreen(
                         if (input.isNotEmpty()) {
 
                             CoroutineScope(Dispatchers.IO).launch {
-                                prefStore.writePrefData(
-                                    PrefStore.PrefData(
-                                        baseUrl = input,
-                                    )
-                                )
+                                prefStore.setBaseUrl(input)
                             }
-//                            保存到Constants
-                            Constants.BASE_URL = input
+//                            UPDATE NET CONFIG HOST
+                            NetConfig.host = input
+                            Log.i("Intro Screen", "NetConfig update host = $input")
                             Constants.showToast(context, R.string.success)
 
                         } else {
@@ -213,11 +208,7 @@ fun IntroScreen(
 //                        TODO 参数校验(懒得做)
 //                        设置firstInstall为非空值
                         CoroutineScope(Dispatchers.IO).launch {
-                            prefStore.writePrefData(
-                                PrefStore.PrefData(
-                                    firstInstall = "true"
-                                )
-                            )
+                            prefStore.setFirstInstall("1")
                         }
                         context.startActivity(Intent(context, MainActivity::class.java))
                     } else {

@@ -1,23 +1,21 @@
 package cn.xqher.smartcity.compose
 
-import android.app.Activity
 import androidx.annotation.DrawableRes
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -26,71 +24,21 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import cn.xqher.smartcity.R
+import cn.xqher.smartcity.compose.screen.home.HomeScreen
+import cn.xqher.smartcity.compose.screen.news.NewsScreen
+import cn.xqher.smartcity.compose.screen.personal.PersonalScreen
+import cn.xqher.smartcity.compose.screen.restrict.RestrictScreen
+import cn.xqher.smartcity.compose.screen.service.ServiceScreen
 import cn.xqher.smartcity.ui.theme.SmartCityTheme
+import cn.xqher.smartcity.utilities.SmartCityAppBar
+
 
 @Composable
 fun SmartCityApp() {
     AppPortrait()
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun TopAppBar(
-    modifier: Modifier = Modifier,
-    context: Activity? = null,
-    needBack: Boolean = true,
-    sizeIcon: ImageVector? = null,
-    title: String = stringResource(id = R.string.app_name),
-    onSizeTodo: () -> Unit = {},
-    containerColor: Color = MaterialTheme.colorScheme.primary,
-    contentColor: Color = Color.White
-) {
-    CenterAlignedTopAppBar(
-        title = {
-            Text(
-                text = title,
-                color = contentColor,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-            )
-        },
-        colors = TopAppBarDefaults.mediumTopAppBarColors(
-            containerColor = containerColor
-        ),
-        navigationIcon = {
-            if (needBack) {
-                IconButton(onClick = {
-                    context?.finish()
-                }) {
-                    Icon(
-                        imageVector = Icons.Filled.ArrowBack,
-                        contentDescription = null,
-                        tint = contentColor
-                    )
-                }
-            }
-        },
-        actions = {
-            if (sizeIcon != null) {
-                IconButton(onClick = {
-                    onSizeTodo()
-                }) {
-                    Icon(
-                        imageVector = sizeIcon,
-                        contentDescription = null,
-                        tint = contentColor
-                    )
-                }
-            }
-        },
-        modifier = modifier
-    )
 }
 
 @Composable
@@ -144,9 +92,8 @@ fun AppPortrait() {
         var appBarText by remember { mutableStateOf("智慧城市") }
 
         Scaffold(
-
             topBar = {
-                TopAppBar(
+                SmartCityAppBar(
                     title = appBarText,
                     sizeIcon = if (appBarText == "智慧城市") Icons.Filled.Menu else null,
                     needBack = false,
@@ -165,20 +112,31 @@ fun AppPortrait() {
             }
 
         ) { padding ->
-
+//            该实现不规范，但是赶时间，先这样吧
             Surface(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(padding)
             ) {
+                Column(
+                    Modifier.verticalScroll(rememberScrollState())
+                    ){
+                    when (appBarText) {
+                        "智慧城市" -> HomeScreen()
+                        "全部服务" -> ServiceScreen()
+                        "精准扶贫" -> RestrictScreen()
+                        "新闻" -> NewsScreen()
+                        "个人中心" -> PersonalScreen()
+                    }
+                }
 
             }
+
         }
     }
 
 }
 
-// DATA PAIR
 
 private val bottomBarData = listOf(
     R.drawable.home to "首页",
@@ -193,7 +151,6 @@ private data class DrawableStringPair(
     @DrawableRes val drawable: Int,
     val text: String
 )
-
 
 @Preview(widthDp = 360, heightDp = 640)
 @Composable

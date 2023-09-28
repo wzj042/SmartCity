@@ -14,4 +14,9 @@
     <string name="nav_restrict">精准扶贫</string>
     <string name="nav_news">新闻</string>
     <string name="nav_personal">个人中心</string>
+    <string name="news_search">新闻搜索</string>
+    <string name="hot_topic">热门主题</string>
+    <string name="service_entrance">服务入口</string>
+    <string name="more_service">更多服务</string>
+    <string name="news_title">苟利国家生死以</string>
 </resources>

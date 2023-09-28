@@ -89,6 +89,9 @@ dependencies {
 
 //    noinspection UseTomlInstead
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
+
+//    Tabs
+    implementation("androidx.compose.foundation:foundation:1.5.2")
 //    def dependencies
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
